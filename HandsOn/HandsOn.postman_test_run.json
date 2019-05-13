@@ -1,0 +1,456 @@
+{
+	"id": "e183d57d-0b16-41ce-87b9-67283396f44f",
+	"name": "HandsOn",
+	"allTests": [],
+	"timestamp": "2019-05-10T13:58:50.576Z",
+	"collection_id": "a1546a94-315b-42d3-90d4-e3f13c4ec793",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "31fcd97c-9d6d-48c2-97a0-5cbc1147bb03",
+	"data": [],
+	"delay": 1000,
+	"count": 1,
+	"collection": {
+		"id": "a1546a94-315b-42d3-90d4-e3f13c4ec793",
+		"name": "HandsOn",
+		"description": null,
+		"auth": null,
+		"events": null,
+		"variables": null,
+		"order": [
+			"ee15bd87-3ca0-49eb-a923-d171bff46163",
+			"94fce105-c460-4ca6-b3e7-808add64d561"
+		],
+		"folders_order": [],
+		"owner": "5327865",
+		"favorite": false,
+		"type": "collection",
+		"depth": 0
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [
+		{
+			"key": "loadHelpers",
+			"value": "function loadHelpers() {\n    let helpers = {};\n \n    helpers.verifyCount = function verifyCount(expectedCount) {\n        var jsonData = JSON.parse(responseBody);\n        tests[\"User count in response is: \" + expectedCount] = jsonData.length === expectedCount;\n    }\n    \n    helpers.verifyResponseHeader = function verifyResponseHeader(key,value) {\n        pm.test(\"Response header ::\"+ key + \" = \" + value + \" is present\", function () {\n            pm.response.to.have.header(key);\n            pm.response.to.be.header(key,value);\n        });\n    }\n \n    // ...additional helpers\n \n    return helpers;\n    }; loadHelpers();",
+			"enabled": true
+		}
+	],
+	"results": [
+		{
+			"name": "GetUsers",
+			"id": "ee15bd87-3ca0-49eb-a923-d171bff46163",
+			"url": "https://jsonplaceholder.typicode.com/users",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Schema Validation": true,
+				"Response time is less than 1000ms": true,
+				"Status code is 200": true,
+				"Status is OK": true,
+				"Response if Json": true,
+				"Content-Type is present": true,
+				"Successful POST request": true,
+				"Body matches string = ctrl+F testing": true,
+				"Check if user with id = 1 has name = Leanne Graham": true,
+				"Check all user name in the response": true,
+				"Response header ::Content-Type = application/json; charset=utf-8 is present": true,
+				"Response header ::Connection = keep-alive is present": true,
+				"Response header ::Transfer-Encoding = chunked is present": true,
+				"Response header ::Cache-Control = public, max-age=14400 is present": true,
+				"Response header ::Content-Encoding = gzip is present": true,
+				"User count in response is: 10": true
+			},
+			"testPassFailCounts": {
+				"Schema Validation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response if Json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string = ctrl+F testing": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if user with id = 1 has name = Leanne Graham": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check all user name in the response": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response header ::Content-Type = application/json; charset=utf-8 is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response header ::Connection = keep-alive is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response header ::Transfer-Encoding = chunked is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response header ::Cache-Control = public, max-age=14400 is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response header ::Content-Encoding = gzip is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"User count in response is: 10": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"130"
+			],
+			"allTests": [
+				{
+					"Schema Validation": true,
+					"Response time is less than 1000ms": true,
+					"Status code is 200": true,
+					"Status is OK": true,
+					"Response if Json": true,
+					"Content-Type is present": true,
+					"Successful POST request": true,
+					"Body matches string = ctrl+F testing": true,
+					"Check if user with id = 1 has name = Leanne Graham": true,
+					"Check all user name in the response": true,
+					"Response header ::Content-Type = application/json; charset=utf-8 is present": true,
+					"Response header ::Connection = keep-alive is present": true,
+					"Response header ::Transfer-Encoding = chunked is present": true,
+					"Response header ::Cache-Control = public, max-age=14400 is present": true,
+					"Response header ::Content-Encoding = gzip is present": true,
+					"User count in response is: 10": true
+				}
+			],
+			"time": "130",
+			"totalRequestTime": "130",
+			"iterationResults": {}
+		},
+		{
+			"name": "GetUsers Copy",
+			"id": "94fce105-c460-4ca6-b3e7-808add64d561",
+			"url": "https://jsonplaceholder.typicode.com/users",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Schema Validation": true,
+				"Response time is less than 1000ms": true,
+				"Status code is 200": true,
+				"Status is OK": true,
+				"Response if Json": true,
+				"Content-Type is present": true,
+				"Successful POST request": true,
+				"Body matches string = ctrl+F testing": true,
+				"Check if user with id = 1 has name = Leanne Graham": true,
+				"Check all user name in the response": true,
+				"Response header ::Content-Type = application/json; charset=utf-8 is present": true,
+				"Response header ::Connection = keep-alive is present": true,
+				"Response header ::Transfer-Encoding = chunked is present": true,
+				"Response header ::Cache-Control = public, max-age=14400 is present": true,
+				"Response header ::Content-Encoding = gzip is present": true,
+				"User count in response is: 10": true
+			},
+			"testPassFailCounts": {
+				"Schema Validation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response if Json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string = ctrl+F testing": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if user with id = 1 has name = Leanne Graham": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check all user name in the response": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response header ::Content-Type = application/json; charset=utf-8 is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response header ::Connection = keep-alive is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response header ::Transfer-Encoding = chunked is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response header ::Cache-Control = public, max-age=14400 is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response header ::Content-Encoding = gzip is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"User count in response is: 10": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"142"
+			],
+			"allTests": [
+				{
+					"Schema Validation": true,
+					"Response time is less than 1000ms": true,
+					"Status code is 200": true,
+					"Status is OK": true,
+					"Response if Json": true,
+					"Content-Type is present": true,
+					"Successful POST request": true,
+					"Body matches string = ctrl+F testing": true,
+					"Check if user with id = 1 has name = Leanne Graham": true,
+					"Check all user name in the response": true,
+					"Response header ::Content-Type = application/json; charset=utf-8 is present": true,
+					"Response header ::Connection = keep-alive is present": true,
+					"Response header ::Transfer-Encoding = chunked is present": true,
+					"Response header ::Cache-Control = public, max-age=14400 is present": true,
+					"Response header ::Content-Encoding = gzip is present": true,
+					"User count in response is: 10": true
+				}
+			],
+			"time": "142",
+			"totalRequestTime": "142",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 32,
+	"totalFail": 0,
+	"totalTime": 272,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "GetUsers",
+			"id": "ee15bd87-3ca0-49eb-a923-d171bff46163",
+			"url": "https://jsonplaceholder.typicode.com/users",
+			"time": "2019-05-10T13:58:50.576Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Schema Validation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response if Json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string = ctrl+F testing": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if user with id = 1 has name = Leanne Graham": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check all user name in the response": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response header ::Content-Type = application/json; charset=utf-8 is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response header ::Connection = keep-alive is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response header ::Transfer-Encoding = chunked is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response header ::Cache-Control = public, max-age=14400 is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response header ::Content-Encoding = gzip is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"User count in response is: 10": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "GetUsers Copy",
+			"id": "94fce105-c460-4ca6-b3e7-808add64d561",
+			"url": "https://jsonplaceholder.typicode.com/users",
+			"time": "2019-05-10T13:58:50.576Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Schema Validation": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status is OK": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response if Json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string = ctrl+F testing": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if user with id = 1 has name = Leanne Graham": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check all user name in the response": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response header ::Content-Type = application/json; charset=utf-8 is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response header ::Connection = keep-alive is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response header ::Transfer-Encoding = chunked is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response header ::Cache-Control = public, max-age=14400 is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response header ::Content-Encoding = gzip is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"User count in response is: 10": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		}
+	],
+	"synced": false
+}
